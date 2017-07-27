@@ -5,9 +5,8 @@ RUN apt-get update \
        netcat  \
     && apt-get clean
 
-EXPOSE 9000
+EXPOSE 8080
 
-COPY wait.sh wait.sh
-COPY ./build/libs/docker-workshop-0.0.1-SNAPSHOT-fat.jar /var/app.jar
+COPY ./build/libs/my-service-0.0.1-SNAPSHOT.jar /var/my-service.jar
 
-CMD ["java", "-jar", "/var/app.jar"]
+CMD ["java", "-jar", "/var/my-service.jar"]
